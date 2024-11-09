@@ -16,7 +16,8 @@ st.title("운동 분류 및 자세 검출 앱")
 
 # BlazePose 모델 초기화
 mp_pose = mp.solutions.pose
-pose = mp_pose.Pose(model_complexity=2, static_image_mode=False, min_detection_confidence=0.5, min_tracking_confidence=0.5)
+pose = mp_pose.Pose(model_complexity=2, static_image_mode=False, min_detection_confidence=0.5, min_tracking_confidence=0.5, ,
+    landmark_model_path="models/pose_landmark_full.tflite")
 
 # 운동 분류 모델 로드 (경로는 필요에 맞게 수정하세요)
 model_path = 'model/model.keras'
