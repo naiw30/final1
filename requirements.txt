@@ -1,5 +1,5 @@
+streamlit
 tensorflow
 mediapipe
 Pillow
 opencv-python-headless
-streamlit
