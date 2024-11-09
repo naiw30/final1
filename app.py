@@ -19,8 +19,7 @@ mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(model_complexity=2, 
                     static_image_mode=False, 
                     min_detection_confidence=0.5, 
-                    min_tracking_confidence=0.5, 
-                    landmark_model_path="model/pose_landmark_full.tflite")
+                    min_tracking_confidence=0.5)
 
 # 운동 분류 모델 로드 (경로는 필요에 맞게 수정하세요)
 model_path = 'model/model.keras'
@@ -123,9 +122,9 @@ if uploaded_file is not None:
                     color = (0, 255, 0) if confidence >= 75 else (0, 0, 255)
 
                     # 한글 텍스트를 프레임에 추가
-                    frame_with_text = draw_text_korean(frame_rgb, exercise_text, (10, 50), font_path, color=color)
+                    frame_with_text = draw_text_korean(frame_rgb, exercise_text, (10, 50), font_path)
 
-                    # 결과 프레임을 저장
+                    # 결과 프레임을 저장 (BGR로 변환 후 저장해야 함)
                     out.write(cv2.cvtColor(frame_with_text, cv2.COLOR_RGB2BGR))
 
         cap.release()
