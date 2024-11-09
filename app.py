@@ -19,7 +19,7 @@ mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(model_complexity=2, static_image_mode=False, min_detection_confidence=0.5, min_tracking_confidence=0.5)
 
 # 운동 분류 모델 로드 (경로는 필요에 맞게 수정하세요)
-model_path = 'https://github.com/naiw30/final1/blob/main/model.keras'
+model_path = 'model/model.keras'
 classification_model = tf.keras.models.load_model(model_path)
 st.success("운동 분류 모델이 성공적으로 로드되었습니다.")
 
@@ -30,7 +30,7 @@ unique_labels = ['스텝 백워드 다이나믹 런지', '스탠딩 니업', '�
                  '사이드 런지', '니푸쉬업', '크런치', '바이시클 크런치', '크로스 런지', '프런트 레이즈']
 
 # 폰트 파일 경로 설정 (필요에 맞게 수정하세요)
-font_path = 'https://github.com/naiw30/final1/blob/main/NanumGothic.ttf'
+font_path = 'NanumGothic.ttf'
 
 # 비디오 파일 업로드
 uploaded_file = st.file_uploader("비디오 파일을 업로드하세요", type=["mp4", "mov", "avi"])
