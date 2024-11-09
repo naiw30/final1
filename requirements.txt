@@ -1,4 +1,4 @@
-opencv-python
 tensorflow
 mediapipe
 Pillow
+opencv-python-headless
