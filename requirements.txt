@@ -3,3 +3,4 @@ tensorflow
 mediapipe
 Pillow
 opencv-python-headless
+scikit-learn
